@@ -72,7 +72,7 @@ NSLog(@&quot;%zu&quot;,class_getInstanceSize([instance class]));
 NSLog(@&quot;%zu&quot;,malloc_size((__bridge const void *)(instance)));
 </code></pre>
 <h3 id="instance内存模型"><a class="markdownIt-Anchor" href="#instance内存模型"></a> <code>instance</code>内存模型</h3>
-<p><img src="https://img-blog.csdnimg.cn/9436f165142446df9ed9499de416cd23.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2JlbjY2OA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /></p>
+<p><img src="/images/9436f165142446df9ed9499de416cd23.png" alt="在这里插入图片描述" /></p>
 <h2 id="二-探究isa对象模型"><a class="markdownIt-Anchor" href="#二-探究isa对象模型"></a> 二、探究isa对象模型</h2>
 <p>要想知道<code>isa</code>的内存模型，首先需要知道<code>isa</code>的类型，<code>isa</code>类型信息如下：</p>
 <pre class="highlight"><code class="">typedef struct objc_class *Class;
@@ -148,7 +148,7 @@ Class getIsa(id obj)&#123;
 &#125;
 </code></pre>
 <h3 id="isa对象内存模型"><a class="markdownIt-Anchor" href="#isa对象内存模型"></a> isa对象内存模型</h3>
-<p><img src="https://img-blog.csdnimg.cn/d8c61eeeca294362b89f4e48e6e937d7.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2JlbjY2OA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" /><br />
+<p><img src="/images/d8c61eeeca294362b89f4e48e6e937d7.png" alt="在这里插入图片描述" /><br />
 从<code>isa</code>的内存模型来看，我们可以很轻易获取其父类、元类等，那么问题来了，类对象的方法、协议相关的东西会存在哪里呢？</p>
 <p>没错，在<code>bits</code>所指向的内存里。</p>
 <p>在<code>struct objc_class</code>中，有一个<code>data</code>方法，来获取<code>bits</code>成员变量所指向的内存：</p>
@@ -206,7 +206,7 @@ Class getIsa(id obj)&#123;
 <p>从<code>class_ro_t</code>的定义中，我们可以看到，该结构存储了类的名称、方法列表、协议、变量名等。</p>
 <h2 id="简略总结图"><a class="markdownIt-Anchor" href="#简略总结图"></a> 简略总结图</h2>
 <p>那么，整个<code>instance</code>实例的内存模型如下：<br />
-<img src="https://img-blog.csdnimg.cn/7364840cb6164b3f97497c57fd6705f0.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2dhb2JlbjY2OA==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述" />当<code>instance</code>需要</p>
+<img src="/images/7364840cb6164b3f97497c57fd6705f0.png" alt="在这里插入图片描述" />当<code>instance</code>需要</p>
 <ul>
 <li>访问成员变量时，直接通过本身的地址+偏移即可。</li>
 <li>想要调用实例方法时，通过<code>isa</code>指针找到类对象，在类对象里找到该方法的地址，如果没有找到，则在其类对象的父类对象中再去寻找，直到找到<code>NSObject</code>的类对象，如果还没找到，返回unrecognized selector错误。</li>

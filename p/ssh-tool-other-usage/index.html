@@ -43,7 +43,7 @@ ssh -R 2222:192.168.1.102:22 admin@gaoxiaodiao.com
 <pre class="highlight"><code class="">ssh -L 1081:127.0.0.1:9050 admin@gaoxiaodiao.com
 </code></pre>
 <p>使用本地1081端口代理访问，检查是否成功：<a target="_blank" rel="noopener" href="https://check.torproject.org/">https://check.torproject.org/</a></p>
-<p><img src="https://gaoxiaodiao.com/wp-content/uploads/2022/07/image-1657029377385.png" alt="file" /></p>
+<p><img src="/images/image-1657029377385.png" alt="file" /></p>
 <p>此时的流量分析软件，只能知道你在访问<code>gaoxiaodiao.com</code>的<code>22</code>端口，并不知道你在使用<code>Tor</code>。</p>
 <h2 id="实用功能3-流量混淆之所有流量"><a class="markdownIt-Anchor" href="#实用功能3-流量混淆之所有流量"></a> 实用功能3 - 流量混淆之所有流量</h2>
 <p>上一小节介绍的是将服务器能访问到的某个端口转发的本地，本小节要介绍的功能就更加强大了，那就是<code>ssh</code>的socks5代理功能。</p>

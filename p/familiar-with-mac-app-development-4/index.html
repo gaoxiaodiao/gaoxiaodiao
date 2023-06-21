@@ -4,11 +4,11 @@
 阶段二，实现数据的绑定，对绑定的数据增、删。</p>
 <p>#阶段一<br />
 1.新建项目。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-4297820e152cc04a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-4297820e152cc04a.png" alt="image.png" /></p>
 <p>2.删除不必要的标签。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-9a39c28e7fa14f7d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="" /></p>
+<img src="/images/13291912-9a39c28e7fa14f7d.png" alt="" /></p>
 <p>3.添加array controller至默认的view controller中。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-bcc955cefff6f3e4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-bcc955cefff6f3e4.png" alt="image.png" /></p>
 <p>4.创建一个NSObject的子类，命名为Song，添加两个属性，并设置其初始化方法。（不会的，请参考上篇文章。）</p>
 <pre class="highlight"><code class="">//Song.h
 #import &lt;Foundation/Foundation.h&gt;
@@ -55,25 +55,25 @@
 &#125;
 </code></pre>
 <p>6.回到storyboard，添加object至默认的view controller中，并且设置其Custom Class为“Document”。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-82f410ad2d084f70.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-f43aa8cede88c08a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="/images/13291912-82f410ad2d084f70.png" alt="image.png" /></p>
+<p><img src="/images/13291912-f43aa8cede88c08a.png" alt="image.png" /></p>
 <p>7.设置array controller的设置ArrayController的【Object Controller】中【Class Name】为Song，然后设置【Content Array】绑定为Docuemnt，并且设置其【Model Key Path】为songs。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-3e0121027d0e1e03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-9fefadd5b1b4a094.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="/images/13291912-3e0121027d0e1e03.png" alt="image.png" /></p>
+<p><img src="/images/13291912-9fefadd5b1b4a094.png" alt="image.png" /></p>
 <p>8.添加一个TableView和两个按钮，布局如下。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-cbc922371a095057.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-cbc922371a095057.png" alt="image.png" /></p>
 <p>9.将TableView绑定于Array Controller。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-6292ae86e244c278.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-6292ae86e244c278.png" alt="image.png" /></p>
 <p>10.将两个按钮与Array Controller的add和reomve方法绑定起来。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-54a3d21f47990e3b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-54a3d21f47990e3b.png" alt="image.png" /></p>
 <p>11.阶段一完成，效果如下。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-64bd887bbd234114.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-64bd887bbd234114.png" alt="image.png" /></p>
 <p>#阶段二 绑定数据<br />
 1.绑定第一列、第二列到name和bpm属性上。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-e5f41d55fe9dde03.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="13291912-7998fe6922d8abf5.png" /></p>
+<img src="/images/13291912-e5f41d55fe9dde03.png" alt="13291912-7998fe6922d8abf5.png" /></p>
 <p><img src="https://upload-images.jianshu.io/upload_images/13291912-f234fc247adaf8d3.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="1533018036363.jpg" /></p>
 <p>2.完成，效果如下。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-7ba0022a82f663bb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-7ba0022a82f663bb.png" alt="image.png" /></p>
 <p>#复习<br />
 可以根据以下项目来复习使用ArrayController。<br />
 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9c700854f2a2">一步一步熟悉Mac app开发（十）之Cocoa Binding</a></p>

@@ -1,18 +1,18 @@
 <!DOCTYPE html><html lang="zh-CN"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="描述"><title>一步一步熟悉Mac app开发（三）之NSTableView | 知识证明</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=1.0.0"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/normalize/latest/normalize.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/pure-min.min.css"><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/pure/latest/grids-responsive-min.min.css"><link rel="stylesheet" href="//lib.baomitu.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//lib.baomitu.com/jquery/latest/jquery.min.js"></script><link rel="icon" mask="" sizes="any" href="/favicon.ico"><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><script type="text/javascript" src="//lib.baomitu.com/clipboard.js/latest/clipboard.min.js"></script><script type="text/javascript" src="//lib.baomitu.com/toastr.js/latest/toastr.min.js"></script><link rel="stylesheet" href="//lib.baomitu.com/toastr.js/latest/toastr.min.css"><meta name="generator" content="Hexo 5.4.2"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">一步一步熟悉Mac app开发（三）之NSTableView</h1><a id="logo" href="/.">知识证明</a><p class="description">卷不动，躺不平，一门心思，只想搞钱...</p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 首页</i></a><a href="/about-me/"><i class="fa fa-user"> 关于</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">一步一步熟悉Mac app开发（三）之NSTableView</h1><div class="post-meta">2018-07-30</div><div class="post-content"><h1 id="概要"><a class="markdownIt-Anchor" href="#概要"></a> 概要</h1>
 <p>本文共分为两个阶段。（在阶段二中详细演示了“拖拽大法”）</p>
 <p>第一个阶段完成NSCollectionView与数据的绑定，其效果如下：<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-7f5494653de12268.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-7f5494653de12268.png" alt="image.png" /></p>
 <p>第二阶段实现，对已有数据进行增加，其效果如下：<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-721cc7e158723981.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-721cc7e158723981.png" alt="image.png" /></p>
 <p>#阶段一</p>
 <p>1.新建项目，拖拽table view至默认的view controller中。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-aba8bf64391f7db6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-aba8bf64391f7db6.png" alt="image.png" /></p>
 <p>2.设置table view的行数为1。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-512567c8117815ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-512567c8117815ba.png" alt="image.png" /></p>
 <p>3.设置table view的dataSource为view controller。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-71bbd190571a4eb2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-71bbd190571a4eb2.png" alt="image.png" /></p>
 <p>4.在ViewController.h中添加&quot;NSTableViewDataSource&quot;协议，并且定义一个NSMutableArray指针变量books。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-687862a3b7f3d3cc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-687862a3b7f3d3cc.png" alt="image.png" /></p>
 <p>5.在ViewController.m中初始化books，向books中插入数据，实现两个协议方法。</p>
 <pre class="highlight"><code class="">- (void)viewDidLoad &#123;
     [super viewDidLoad];
@@ -41,15 +41,15 @@
 &#125;
 </code></pre>
 <p>6.将table view cell与books绑定起来。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-abfbed666d8be701.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-abfbed666d8be701.png" alt="image.png" /></p>
 <p>7.阶段一完成，效果图如下：<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-7f5494653de12268.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-7f5494653de12268.png" alt="image.png" /></p>
 <p>#阶段二</p>
 <p>1.在默认的view controller中添加Text Field和Push Button。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-77d6b153d4e34712.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-77d6b153d4e34712.png" alt="image.png" /></p>
 <p>2.将Text Filed、Table View拖拽大法至ViewController.h中，将Push Button拖拽大法至ViewController.m中。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-c8eb234e65a6d23d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-984b09cfd87f7fcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-c8eb234e65a6d23d.png" alt="image.png" /></p>
+<p><img src="/images/13291912-984b09cfd87f7fcb.png" alt="image.png" /></p>
 <pre class="highlight"><code class="">//ViewController.h 生成代码如下：
 @property (weak) IBOutlet NSTextField *textField_new_book_name;
 @property (weak) IBOutlet NSTableView *tableview_book_list;
@@ -69,7 +69,7 @@
 &#125;
 </code></pre>
 <p>3.阶段二完成，效果如下：<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-721cc7e158723981.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-721cc7e158723981.png" alt="image.png" /></p>
 <p>#结语与复习<br />
 增加都会了，你还让我给你演示删除？给我打赏完自己去实现吧！<br />
 （更多关于TableView的用法详见：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/9c700854f2a2">一步一步熟悉Mac app开发（十）之Cocoa Binding</a>）</p>

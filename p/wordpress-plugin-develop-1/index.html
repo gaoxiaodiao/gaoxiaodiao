@@ -9,14 +9,14 @@ Plugin Name: 示例插件
 Description: 没有什么卵用的插件
 Author: 高小调
 Version: 1.0.0
-Author URI: https://gaoxiaodiao.com/
+Author URI: http://gaoxiaodiao.com/
 */
 </code></pre>
 <p>然后，把这个文件压缩成一个zip文件，得到一个：<code>demo.php.zip</code></p>
-<p>接下来，来到Wordpress后台页面，点击插件-&gt;安装插件-&gt;上传插件-&gt;立即安装： <img src="https://gaoxiaodiao.com/wp-content/uploads/2022/09/image-1663251456965.png" alt="file" /></p>
-<p><img src="https://gaoxiaodiao.com/wp-content/uploads/2022/09/image-1663251503150.png" alt="file" /></p>
-<p><img src="https://gaoxiaodiao.com/wp-content/uploads/2022/09/image-1663251748894.png" alt="file" /></p>
-<p>稍等片刻后，就可以在插件列表里看到出现了一个新插件： <img src="https://gaoxiaodiao.com/wp-content/uploads/2022/09/image-1663252222829.png" alt="file" /></p>
+<p>接下来，来到Wordpress后台页面，点击插件-&gt;安装插件-&gt;上传插件-&gt;立即安装： <img src="/images/image-1663251456965.png" alt="file" /></p>
+<p><img src="/images/image-1663251503150.png" alt="file" /></p>
+<p><img src="/images/image-1663251748894.png" alt="file" /></p>
+<p>稍等片刻后，就可以在插件列表里看到出现了一个新插件： <img src="/images/image-1663252222829.png" alt="file" /></p>
 <p>由于，demo.php文件里没有任何可以执行的php代码，所以即使你启用<code>示例插件</code>也不会产生任何的效果。</p>
 <h2 id="阶段二了解action与filter"><a class="markdownIt-Anchor" href="#阶段二了解action与filter"></a> 阶段二：了解action与filter</h2>
 <p>我想开发一个wordpress的插件，必然是要通过它实现某个功能，wordpress提供了两个函数<code>add_action</code>和<code>add_filter</code>来供我们在某个特定的时间点来做一些事情。</p>
@@ -42,7 +42,7 @@ Plugin Name: 示例插件
 Description: add_action初体验
 Author: 高小调
 Version: 1.0.1
-Author URI: https://gaoxiaodiao.com/
+Author URI: http://gaoxiaodiao.com/
 */
 
 function add_custom_js_script_code()&#123;
@@ -66,7 +66,7 @@ add_action( 'admin_head', 'add_custom_js_script_code' );
 <h2 id="阶段四-实战之使用filter"><a class="markdownIt-Anchor" href="#阶段四-实战之使用filter"></a> 阶段四： 实战之使用filter</h2>
 <p>上述的例子，太过于偏向于Demo，可能会有读者心想：哦，那样做有什么用呢？</p>
 <p>所以，接下来，我来以一个模拟场景举例，来示范filter的用法。</p>
-<p>在前文<a href="https://gaoxiaodiao.com/software-development/wordpress-honeypot-dev-1/">开发Wordpress蜜罐（一）：项目概述</a>中，我想留下黑客入侵后的所有痕迹，其中一种实现方案就是通过Wordpress的插件来实现。蜜罐的功能之一是要：记录黑客的弱口令字典。</p>
+<p>在前文<a href="http://gaoxiaodiao.com/software-development/wordpress-honeypot-dev-1/">开发Wordpress蜜罐（一）：项目概述</a>中，我想留下黑客入侵后的所有痕迹，其中一种实现方案就是通过Wordpress的插件来实现。蜜罐的功能之一是要：记录黑客的弱口令字典。</p>
 <p>所以，本小节目标就是让插件实现记录登录失败的功能，做法很简单，找到登录验证的hookname，然后是否判断登录失败，登录失败后，将失败的用户名/密码记录下来。</p>
 <h3 id="步骤一找hookname"><a class="markdownIt-Anchor" href="#步骤一找hookname"></a> 步骤一：找hookname</h3>
 <p>我们可以从<a target="_blank" rel="noopener" href="https://codex.wordpress.org/Plugin_API/Filter_Reference">Plugin API/Filter Reference</a>这篇文档中，可以找到一个为<a target="_blank" rel="noopener" href="https://developer.wordpress.org/reference/hooks/authenticate/">authenticate</a>的hook name，它的解释是“过滤用户登录的凭证是否有效”。</p>
@@ -116,7 +116,7 @@ add_filter( 'authenticate', 'wp_authenticate_spam_check',         99    );
     &#125;
 &#125;
 </code></pre>
-<p>最终效果，你可以：<a href="https://gaoxiaodiao.com/login_history.txt">访问此处</a>。</p>
+<p>最终效果，你可以：<a href="http://gaoxiaodiao.com/login_history.txt">访问此处</a>。</p>
 <h2 id="更多资料"><a class="markdownIt-Anchor" href="#更多资料"></a> 更多资料</h2>
 <p><a target="_blank" rel="noopener" href="https://developer.wordpress.org/plugins/">wordpress插件官方文档</a></p>
 <p><a target="_blank" rel="noopener" href="https://developer.wordpress.org/plugins/plugin-basics/activation-deactivation-hooks/">启用/停用的Hook示例</a></p>

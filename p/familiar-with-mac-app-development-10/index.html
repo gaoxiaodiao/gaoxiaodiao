@@ -4,7 +4,7 @@
 阶段三、通过使用文本框的委托方法controlTextDidChange实现table view内数据的动态修改。</p>
 <h1 id="阶段一-数据的显示与增加"><a class="markdownIt-Anchor" href="#阶段一-数据的显示与增加"></a> 阶段一 数据的显示与增加</h1>
 <p>1、新建工程，打开StoryBoard，添加Push Button、Text Filed、Label、Array Controller、Table View等。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-288df1ed9446685c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="/images/13291912-288df1ed9446685c.png" alt="image.png" /></p>
 <p>2、创建一个NSObject的子类User，并为其添加firstName与lastName成员。</p>
 <pre class="highlight"><code class="">//User.h
 #import &lt;Foundation/Foundation.h&gt;
@@ -44,15 +44,15 @@
 &#125;
 </code></pre>
 <p>4、打开StoryBoard，设置Array Controller的Object Controller中的Class Name为User，将Array Controller的Content Array与ViewController的users进行绑定。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-32335dc4d890a247.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-147195c986836dc7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="/images/13291912-32335dc4d890a247.png" alt="image.png" /></p>
+<p><img src="/images/13291912-147195c986836dc7.png" alt="image.png" /></p>
 <p>5、将Table view的Table Content与Array Controller进行绑定，并将Add按钮与Array Controller的Add方法进行绑定。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-e5dd9c88e7ec9780.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-47e7fb1af5dd4016.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-c9630fbfd1fbf9d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-0bac63e4d765b064.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="/images/13291912-e5dd9c88e7ec9780.png" alt="image.png" /></p>
+<p><img src="/images/13291912-47e7fb1af5dd4016.png" alt="image.png" /></p>
+<p><img src="/images/13291912-c9630fbfd1fbf9d1.png" alt="image.png" /></p>
+<p><img src="/images/13291912-0bac63e4d765b064.png" alt="image.png" /></p>
 <p>6、阶段一完成，效果如下。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-6c211ce0de38b8b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="/images/13291912-6c211ce0de38b8b4.png" alt="image.png" /></p>
 <h1 id="阶段二-选中项处理"><a class="markdownIt-Anchor" href="#阶段二-选中项处理"></a> 阶段二 选中项处理</h1>
 <p>1、将table view与两个text filed拖拽大法至ViewController.h中，并添加NSTableViewDelegate协议，拖拽细节省略，代码如下。</p>
 <pre class="highlight"><code class="">#import &quot;ViewController.h&quot;
@@ -65,7 +65,7 @@
 @end
 </code></pre>
 <p>2、设置table view的delegate为View Controller，并实现其委托协议方法。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-cb98cfe209a099d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="/images/13291912-cb98cfe209a099d2.png" alt="image.png" /></p>
 <pre class="highlight"><code class="">- (void)tableViewSelectionDidChange:(NSNotification *)notification&#123;
     if(self.tableView.selectedRow &lt; 0)&#123;
         self.text_firstName.stringValue = @&quot;&quot;;
@@ -78,16 +78,16 @@
 &#125;
 </code></pre>
 <p>3、完成，效果如下。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-847f927b5b6c4c9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="/images/13291912-847f927b5b6c4c9e.png" alt="image.png" /></p>
 <h1 id="阶段三-数据的动态修改"><a class="markdownIt-Anchor" href="#阶段三-数据的动态修改"></a> 阶段三 数据的动态修改</h1>
 <p>1、新增“Update”按钮，拖拽大法至ViewController.m内，命名为btn_update。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-fb112c702be09bc0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-fb112c702be09bc0.png" alt="image.png" /></p>
 <p>2、将表示First Name的文本框与currentUser.firstName绑定起来，将表示Last Name的文本框与currentUser.lastName绑定起来。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-a0166ba077bfe5d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-8af36dc8be453d37.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="/images/13291912-a0166ba077bfe5d2.png" alt="image.png" /></p>
+<p><img src="/images/13291912-8af36dc8be453d37.png" alt="image.png" /></p>
 <p>3、将First Name文本框、Last Name文本框委托给View Controller。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-c85fc7bfff70d149.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-37c7ed0d038f95b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="/images/13291912-c85fc7bfff70d149.png" alt="image.png" /></p>
+<p><img src="/images/13291912-37c7ed0d038f95b0.png" alt="image.png" /></p>
 <p>4、在ViewController.m中添加临时委托协议NStextFiledDelegate，并实现controlTextDidChange方法。</p>
 <pre class="highlight"><code class="">#import &quot;ViewController.h&quot;
 #import &quot;User.h&quot;
@@ -136,5 +136,5 @@
 
 </code></pre>
 <p>4、完成，效果如下。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/13291912-103a3c34414fce68.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<p><img src="/images/13291912-103a3c34414fce68.png" alt="image.png" /></p>
 </div><div class="tags"><a href="/tags/mac开发"><i class="fa fa-tag">mac开发</i></a></div><div class="post-nav"><a class="pre" href="/p/familiar-with-mac-app-development-11/">一步一步熟悉Mac app开发（十一）之Radio Button</a><a class="next" href="/p/familiar-with-mac-app-development-9/">一步一步熟悉Mac app开发（九）之NSPopover</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="author-info"><a class="info-avatar" href="/about-me/" title="关于"><img class="nofancybox" src="/img/avatar.png"/></a><p>stay hungry, stay foolish</p><a class="info-icon" href="https://twitter.com/gaoxiaodiao" title="Twitter" target="_blank" style="margin-inline:5px"> <i class="fa fa-twitter-square" style="margin-inline:5px"></i></a><a class="info-icon" href="mailto:admin@domain.com" title="Email" target="_blank" style="margin-inline:5px"> <i class="fa fa-envelope-square" style="margin-inline:5px"></i></a><a class="info-icon" href="https://github.com/gaoxiaodiao" title="Github" target="_blank" style="margin-inline:5px"> <i class="fa fa-github-square" style="margin-inline:5px"></i></a><a class="info-icon" href="/atom.xml" title="RSS" target="_blank" style="margin-inline:5px"> <i class="fa fa-rss-square" style="margin-inline:5px"></i></a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 标签</i></div><div class="tagcloud"><a href="/tags/linux%E5%BC%80%E5%8F%91/" style="font-size: 15px;">linux开发</a> <a href="/tags/mac%E5%BC%80%E5%8F%91/" style="font-size: 15px;">mac开发</a> <a href="/tags/%E5%B7%A5%E6%AC%B2%E5%96%84%E5%85%B6%E4%BA%8B-%E5%BF%85%E5%85%88%E5%88%A9%E5%85%B6%E5%99%A8/" style="font-size: 15px;">工欲善其事,必先利其器</a> <a href="/tags/%E9%80%86%E5%90%91-%E7%A0%B4%E8%A7%A3/" style="font-size: 15px;">逆向&破解</a> <a href="/tags/%E7%AC%AC%E4%B8%89%E6%96%B9%E5%BA%93%E7%BC%96%E8%AF%91/" style="font-size: 15px;">第三方库编译</a> <a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 15px;">笔记</a> <a href="/tags/%E5%BC%80%E5%8F%91-%E4%BB%A3%E7%A0%81/" style="font-size: 15px;">开发&代码</a> <a href="/tags/%E5%A4%AA%E7%9B%91/" style="font-size: 15px;">太监</a> <a href="/tags/%E5%A5%87%E6%8A%80%E6%B7%AB%E5%B7%A7/" style="font-size: 15px;">奇技淫巧</a> <a href="/tags/%E6%95%85%E9%9A%9C%E6%8E%92%E9%99%A4-%E4%BF%AE%E5%A4%8D/" style="font-size: 15px;">故障排除/修复</a> <a href="/tags/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/" style="font-size: 15px;">心路历程</a> <a href="/tags/%E5%89%AF%E4%B8%9A%E6%8E%A2%E7%B4%A2/" style="font-size: 15px;">副业探索</a> <a href="/tags/PowerShell/" style="font-size: 15px;">PowerShell</a> <a href="/tags/Foundry/" style="font-size: 15px;">Foundry</a> <a href="/tags/%E5%8E%9F%E5%A7%8B%E7%9F%A5%E8%AF%86%E7%A7%AF%E7%B4%AF/" style="font-size: 15px;">原始知识积累</a> <a href="/tags/htb/" style="font-size: 15px;">htb</a> <a href="/tags/CTF/" style="font-size: 15px;">CTF</a> <a href="/tags/ChatGPT%E6%97%A0%E6%B3%95%E5%81%9A%E5%88%B0%E7%9A%84%E4%BA%8B%E6%83%85/" style="font-size: 15px;">ChatGPT无法做到的事情</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 最近文章</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/p/lady-luck-is-smiling-2/">幸运女神在微笑（二）</a></li><li class="post-list-item"><a class="post-list-link" href="/p/lady-luck-is-smiling-1/">幸运女神在微笑（一）</a></li><li class="post-list-item"><a class="post-list-link" href="/p/the-third-wave-reading-notes-6/">读书与思考之《第三次浪潮》第六章</a></li><li class="post-list-item"><a class="post-list-link" href="/p/the-third-wave-reading-notes-5/">读书与思考之《第三次浪潮》第五章</a></li><li class="post-list-item"><a class="post-list-link" href="/p/how-to-modify-registry-by-powershell/">如何通过PowerShell来创建、读取、修改、删除注册表？</a></li><li class="post-list-item"><a class="post-list-link" href="/p/the-third-wave-reading-notes-3_4/">读书与思考之《第三次浪潮》第三、四章</a></li><li class="post-list-item"><a class="post-list-link" href="/p/investment-cryptocurrency-diary-1/">加密货币投资日记（一）：序言</a></li><li class="post-list-item"><a class="post-list-link" href="/p/how-to-use-forge-for-testing-2/">学习Foundry之编写测试代码（二）：标准库与作弊码</a></li><li class="post-list-item"><a class="post-list-link" href="/p/how-to-use-forge-for-testing-1/">学习Foundry之编写测试代码（一）：初识Test合约</a></li><li class="post-list-item"><a class="post-list-link" href="/p/how-to-use-forge-to-create-project/">学习Foundry之创建、管理项目及其依赖项</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 友情链接</i></div><ul></ul><a href="https://gaoxiaodiao.com/" title="高小调博客" target="_blank">高小调博客</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2023 <a href="/." rel="nofollow">知识证明.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=1.0.0" async></script><script type="text/javascript" src="//lib.baomitu.com/fancybox/latest/jquery.fancybox.min.js"></script><script type="text/javascript" src="/js/fancybox.js?v=1.0.0"></script><link rel="stylesheet" type="text/css" href="//lib.baomitu.com/fancybox/latest/jquery.fancybox.min.css"><script type="text/javascript" src="/js/love.js?v=1.0.0"></script><script type="text/javascript" src="/js/copycode.js?v=1.0.0" successtext="复制成功！"></script><link rel="stylesheet" type="text/css" href="/css/copycode.css?v=1.0.0"><script type="text/javascript" src="/js/codeblock-resizer.js?v=1.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=1.0.0"></script></div></body></html>

@@ -4,15 +4,15 @@
 阶段三，实现撤销功能。(存在问题)</p>
 <p>#阶段一 实现数据的显示<br />
 1.新建项目，打开storyboard，将source list拖拽直默认的view controller中。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-3965aa7a7a2787a1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-3965aa7a7a2787a1.png" alt="image.png" /></p>
 <p>2.将tree controller和object拖拽至默认的view controller的顶部。(不会的请看前文)<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-34bc3471c29140da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-34bc3471c29140da.png" alt="image.png" /></p>
 <p>3.点击选中object，设置其【Custom Class】为“NSMutableArray”，设置其【Document Label】为playlits。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-f6e6dffc08bf64d5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-f6e6dffc08bf64d5.png" alt="image.png" /></p>
 <p>4.点击选中Tree Controller，按住Control键将其拖拽至object图标上，选择content。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-21d8abdc62792e2a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-21d8abdc62792e2a.png" alt="image.png" /></p>
 <p>5.点击选中Tree Controller，设置其Children为children、Ledf为isLeaf、Class Name为Playlist。(聪明的你知道我们下一步要做什么了吗？)<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-c650291d4b7efac5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-c650291d4b7efac5.png" alt="image.png" /></p>
 <p>6.新建一个NSObject的子类Playlist，声明两个属性name和creator，声明并实现isLeaf和初始化方法。</p>
 <pre class="highlight"><code class="">//Playlist.h
 #import &lt;Cocoa/Cocoa.h&gt;
@@ -52,16 +52,16 @@
 </code></pre>
 <p>7、绑定。<br />
 7-1、将Table Column与Tree Controller进行绑定；<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-bc567f8234c728c7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /><br />
+<img src="/images/13291912-bc567f8234c728c7.png" alt="image.png" /><br />
 7-2将HEADER CELL与Table Cell View进行绑定，并设置其key <a target="_blank" rel="noopener" href="http://xn--pathobjectvalue-m53x.name">path为objectvalue.name</a>；<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-85d8cb910691fab2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /><br />
+<img src="/images/13291912-85d8cb910691fab2.png" alt="image.png" /><br />
 7-3、将Table View Cell与Table Cell View进行绑定，设置为其key <a target="_blank" rel="noopener" href="http://xn--pathobjectvalue-m53x.name">path为objectvalue.name</a>。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-802a9a04f8a63ebf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /><br />
+<img src="/images/13291912-802a9a04f8a63ebf.png" alt="image.png" /><br />
 7-4、最后将View Controller做为Outline View的Datasource与Delegate。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-03c9a3bc25546b75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-03c9a3bc25546b75.png" alt="image.png" /></p>
 <p>8.拖拽大法，将outline view与tree controller拖拽直ViewController.h中。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-0789300fa3de55da.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /><br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-1c5f40cf3b6d199a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /><br />
+<img src="/images/13291912-0789300fa3de55da.png" alt="image.png" /><br />
+<img src="/images/13291912-1c5f40cf3b6d199a.png" alt="image.png" /><br />
 并且在ViewController.h中添加NSOutlineViewDataSource和NSOutlineViewDelegate协议。</p>
 <pre class="highlight"><code class="">//ViewController.h
 #import &lt;Cocoa/Cocoa.h&gt;
@@ -123,7 +123,7 @@
 
 </code></pre>
 <p>10.阶段一完成，效果如下。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-18c13b45a7e49b6a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-18c13b45a7e49b6a.png" alt="image.png" /></p>
 <p>#阶段二 实现拖拽调整数据功能</p>
 <p>1.打开ViewController.m中，在viewDidLoad方法中新增代码。</p>
 <pre class="highlight"><code class="">    //阶段二
@@ -183,7 +183,7 @@
 &#125;
 </code></pre>
 <p>3.阶段二，完成！<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-20ec7d9393d5c28e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-20ec7d9393d5c28e.png" alt="image.png" /></p>
 <p>#阶段三 实现撤销功能</p>
 <p>1.实现两个协议方法。</p>
 <pre class="highlight"><code class="">//阶段三之是否为GroupItem
@@ -233,7 +233,7 @@
 &#125;
 </code></pre>
 <p>3.阶段三完成，效果如下。<br />
-<img src="https://upload-images.jianshu.io/upload_images/13291912-54d39dfacbb9666e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png" /></p>
+<img src="/images/13291912-54d39dfacbb9666e.png" alt="image.png" /></p>
 <p>#思考<br />
 这里有个小问题，在拖拽p2时，必须先点击选中p2，再去将p2拖拽至p1，否则在撤销时，就会存在p2与Library位置互换的BUG。<br />
 这个可爱的BUG就交给你们去修复啦！</p>

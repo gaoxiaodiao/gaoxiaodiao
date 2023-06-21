@@ -86,7 +86,7 @@
 <p>那么，问题来了，我来提出一个与C++的一些黑魔法问题类似的问题：<strong>如何在栈内存中创建一个<code>NSObject</code>的对象呢？</strong>（答案见文末）</p>
 <h3 id="e-obj对象内存模型图"><a class="markdownIt-Anchor" href="#e-obj对象内存模型图"></a> e - <code>obj</code>对象内存模型（图）</h3>
 <p>假设<code>obj</code>指针所指向对象的内存地址为<code>0x100611690</code>，那么<code>obj</code>对象的内存模型如下：<br />
-<img src="https://img-blog.csdnimg.cn/img_convert/2cd4402f4baa59928bd3d795f2c3b8f6.png" alt="在这里插入图片描述" /></p>
+<img src="/images/2cd4402f4baa59928bd3d795f2c3b8f6.png" alt="在这里插入图片描述" /></p>
 <h2 id="二-单继承"><a class="markdownIt-Anchor" href="#二-单继承"></a> 二、单继承</h2>
 <h3 id="a-创建person类继承自nsobject"><a class="markdownIt-Anchor" href="#a-创建person类继承自nsobject"></a> a - 创建<code>Person</code>类(继承自<code>NSObject</code>)</h3>
 <p>创建一个<code>Person</code>类继承于<code>NSObject</code>类，为了降低分析的复杂度，采用基本数据类型做为成员变量，代码如下：</p>
@@ -111,7 +111,7 @@ p-&gt;_age = 0x12345678;
 <h4 id="彩蛋问题2如何在栈内存中创建一个person的对象"><a class="markdownIt-Anchor" href="#彩蛋问题2如何在栈内存中创建一个person的对象"></a> 彩蛋问题2：如何在栈内存中创建一个<code>Person</code>的对象?</h4>
 <h3 id="d-p的内存模型"><a class="markdownIt-Anchor" href="#d-p的内存模型"></a> d - <code>p</code>的内存模型</h3>
 <p>假设<code>p</code>指针所指向对象的内存地址为<code>0x100611690</code>，那么<code>p</code>对象的内存模型如下：<br />
-<img src="https://img-blog.csdnimg.cn/img_convert/1473302d223252d2308c1a695edbf638.png" alt="在这里插入图片描述" /></p>
+<img src="/images/1473302d223252d2308c1a695edbf638.png" alt="在这里插入图片描述" /></p>
 <h3 id="e-创建student类继承自person"><a class="markdownIt-Anchor" href="#e-创建student类继承自person"></a> e - 创建<code>Student</code>类(继承自<code>Person</code>)</h3>
 <pre class="highlight"><code class="">@interface Student : Person&#123;
     @public
@@ -138,7 +138,7 @@ s-&gt;_no = 0x22222222;
 <h4 id="彩蛋问题3如何在栈内存中创建一个student的对象"><a class="markdownIt-Anchor" href="#彩蛋问题3如何在栈内存中创建一个student的对象"></a> 彩蛋问题3：如何在栈内存中创建一个<code>Student</code>的对象?</h4>
 <h3 id="h-s的内存模型"><a class="markdownIt-Anchor" href="#h-s的内存模型"></a> h - <code>s</code>的内存模型</h3>
 <p>假设<code>s</code>指针所指向对象的内存地址为<code>0x100611690</code>，那么<code>s</code>对象的内存模型如下：<br />
-<img src="https://img-blog.csdnimg.cn/img_convert/077a028105bae807a258ca9280f99941.png" alt="在这里插入图片描述" /></p>
+<img src="/images/077a028105bae807a258ca9280f99941.png" alt="在这里插入图片描述" /></p>
 <h2 id="三-多继承"><a class="markdownIt-Anchor" href="#三-多继承"></a> 三、多继承</h2>
 <p>什么？<br />
 你看到了这里？<br />
